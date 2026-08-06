@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="用一个轻松好玩的随机转盘，决定今天吃什么。">
+  <title>今天吃什么｜随机美食转盘</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="今天吃什么首页"><span class="brand-mark">筷</span><span>今天吃什么</span></a>
+      <p>让选择，简单一点</p>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <span class="eyebrow">WHAT TO EAT?</span>
+        <h1>今天，<em>吃什么？</em></h1>
+        <p>把纠结交给转盘，把时间留给好好吃饭。</p>
+      </div>
+      <div class="wheel-zone">
+        <div class="wheel-stage" id="wheel-stage" aria-label="随机美食转盘">
+          <div class="pointer" aria-hidden="true"><span></span></div>
+          <div class="wheel" id="wheel"><span class="wheel-hub" aria-hidden="true"><i></i></span></div>
+        </div>
+        <button class="spin-button" id="spin-button" type="button"><span id="spin-text">吃什么</span><span class="spin-icon" aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+
+    <section class="workspace" aria-label="转盘管理">
+      <article class="panel options-panel">
+        <div class="panel-heading">
+          <div><span class="step-number">01</span><h2>添加选项</h2></div>
+          <button class="text-button" id="clear-options" type="button">清空</button>
+        </div>
+        <form class="add-form" id="add-form">
+          <label class="sr-only" for="food-option">输入食物选项</label>
+          <input id="food-option" maxlength="12" placeholder="例如：麻辣烫" autocomplete="off">
+          <button type="submit" aria-label="添加选项">＋</button>
+        </form>
+        <div class="option-list" id="option-list" aria-live="polite"></div>
+        <p class="panel-footnote" id="option-count"></p>
+      </article>
+
+      <article class="panel history-panel">
+        <div class="panel-heading">
+          <div><span class="step-number">02</span><h2>最近吃过</h2></div>
+          <button class="text-button" id="clear-history" type="button">清空历史</button>
+        </div>
+        <div class="history-list" id="history-list" aria-live="polite"></div>
+      </article>
+    </section>
+
+    <footer>© 2026 今天吃什么 · 每一餐都值得期待</footer>
+    <div class="toast" id="toast" role="status" hidden></div>
+
+    <div class="modal-backdrop" id="result-backdrop" role="presentation" hidden>
+      <section class="result-modal" role="dialog" aria-modal="true" aria-labelledby="result-title">
+        <button class="modal-close" id="modal-close" type="button" aria-label="关闭结果弹窗">×</button>
+        <span class="result-kicker">转盘说</span>
+        <h2 id="result-title"></h2>
+        <p>命运替你做好决定了，出发吧！</p>
+        <button class="modal-action" id="modal-action" type="button">好，就这么定</button>
+      </section>
+    </div>
+  </main>
+  <script src="app.js" defer></script>
+</body>
+</html>
