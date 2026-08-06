@@ -9,6 +9,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--cream); color: var(--ink); font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif; }
 button, input { font: inherit; }
@@ -125,4 +126,3 @@ footer { max-width: 1128px; margin: auto; padding: 26px 0 34px; border-top: 1px 
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .wheel { transition-duration: .01ms; }
 }
-
